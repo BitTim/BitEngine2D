@@ -23,7 +23,7 @@ void Game::render()
   SDL_SetRenderDrawColor(Engine::renderer, 0x00, 0x00, 0x00, 0xFF);
   SDL_RenderClear(Engine::renderer);
 
-
+  engine->render();
 
   SDL_RenderPresent(Engine::renderer);
 }

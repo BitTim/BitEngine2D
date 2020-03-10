@@ -4,12 +4,16 @@ SDL_Renderer* Engine::renderer = nullptr;
 SDL_Event Engine::event;
 bool Engine::running = true;
 
+EntityManager* Engine::entityManager = nullptr;
+
 void Engine::init(std::string title, int x, int y, int w, int h, bool fullscreen)
 {
   SDL_Init(SDL_INIT_EVERYTHING);
   window = SDL_CreateWindow(title.c_str(), x, y, w, h, fullscreen ? SDL_WINDOW_FULLSCREEN : 0);
   renderer = SDL_CreateRenderer(window, -1, 0);
   SDL_SetRenderDrawBlendMode(renderer, SDL_BLENDMODE_BLEND);
+
+  entityManager = new EntityManager();
 }
 
 void Engine::evHandle()
@@ -20,7 +24,13 @@ void Engine::evHandle()
 
 void Engine::update()
 {
+  entityManager->refresh();
+  entityManager->update();
+}
 
+void Engine::render()
+{
+  entityManager->draw();
 }
 
 void Engine::terminate()
