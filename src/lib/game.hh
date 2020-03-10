@@ -1,8 +1,9 @@
 #pragma once
 #include "Engine/engine.hh"
 
-struct Game
+class Game
 {
+public:
   static Engine* engine;
   
   Game() { }
