@@ -23,9 +23,9 @@ public:
   friend Vector2& operator/(Vector2& v1, const Vector2& v2);
 
   Vector2& operator+=(const Vector2& vec);
-  Vector2& operator+=(const Vector2& vec);
-  Vector2& operator+=(const Vector2& vec);
-  Vector2& operator+=(const Vector2& vec);
+  Vector2& operator-=(const Vector2& vec);
+  Vector2& operator*=(const Vector2& vec);
+  Vector2& operator/=(const Vector2& vec);
 
   Vector2& operator^(const float& s);
 };

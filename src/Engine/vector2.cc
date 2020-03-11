@@ -27,8 +27,8 @@ Vector2& operator*(Vector2& v1, const Vector2& v2) { return v1.mul(v2); }
 Vector2& operator/(Vector2& v1, const Vector2& v2) { return v1.div(v2); }
 
 Vector2& Vector2::operator+=(const Vector2& vec) { return this->add(vec); }
-Vector2& Vector2::operator+=(const Vector2& vec) { return this->sub(vec); }
-Vector2& Vector2::operator+=(const Vector2& vec) { return this->mul(vec); }
-Vector2& Vector2::operator+=(const Vector2& vec) { return this->div(vec); }
+Vector2& Vector2::operator-=(const Vector2& vec) { return this->sub(vec); }
+Vector2& Vector2::operator*=(const Vector2& vec) { return this->mul(vec); }
+Vector2& Vector2::operator/=(const Vector2& vec) { return this->div(vec); }
 
 Vector2& Vector2::operator^(const float& s) { return this->scale(s); }
