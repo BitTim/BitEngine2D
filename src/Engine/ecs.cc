@@ -1,4 +1,4 @@
-#include "../../lib/Entity Component System/entityCompSys.hh"
+#include "../lib/Engine/ecs.hh"
 
 void Entity::addGroup(Group nGroup)
 {
