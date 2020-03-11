@@ -14,7 +14,7 @@ public:
   static bool running;
 
   static EntityManager* entityManager;
-  static std::vector<Entity&> entities;
+  static std::vector<Entity*> entities;
 
   SDL_Window* window;
 

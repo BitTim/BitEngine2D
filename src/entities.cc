@@ -9,7 +9,7 @@ void EntitiyCreator::player()
   
   playerEntity.addGroup(Engine::egPlayer);
 
-  Engine::entities.push_back(playerEntity);
+  Engine::entities.push_back(&playerEntity);
 }
 
 void EntitiyCreator::tile()
