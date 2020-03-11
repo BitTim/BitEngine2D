@@ -2,7 +2,7 @@
 
 #include <SDL2/SDL.h>
 #include <string>
-#include <map>
+#include <vector>
 
 #include "ecs.hh"
 
@@ -14,7 +14,7 @@ public:
   static bool running;
 
   static EntityManager* entityManager;
-  static std::map<std::string, Entity&> entities;
+  static std::vector<Entity&> entities;
 
   SDL_Window* window;
 
@@ -27,4 +27,10 @@ public:
   void terminate();
 
   ~Engine() { }
+
+  enum EntityGroups : std::size_t
+  {
+    egPlayer,
+    egTerrain
+  };
 };

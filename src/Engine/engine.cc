@@ -5,7 +5,7 @@ SDL_Event Engine::event;
 bool Engine::running = true;
 
 EntityManager* Engine::entityManager = nullptr;
-std::map<std::string, Entity&> Engine::entities;
+std::vector<Entity&> Engine::entities;
 
 void Engine::init(std::string title, int x, int y, int w, int h, bool fullscreen)
 {
