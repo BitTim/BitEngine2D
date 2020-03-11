@@ -2,6 +2,7 @@
 
 #include <SDL2/SDL.h>
 #include <string>
+#include <map>
 
 #include "ecs.hh"
 
@@ -13,6 +14,7 @@ public:
   static bool running;
 
   static EntityManager* entityManager;
+  static std::map<std::string, Entity&> entities;
 
   SDL_Window* window;
 

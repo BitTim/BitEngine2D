@@ -1,10 +1,12 @@
 #include "../lib/Engine/engine.hh"
+#include "../lib/Engine/entityLoader.hh"
 
 SDL_Renderer* Engine::renderer = nullptr;
 SDL_Event Engine::event;
 bool Engine::running = true;
 
 EntityManager* Engine::entityManager = nullptr;
+std::map<std::string, Entity&> Engine::entities;
 
 void Engine::init(std::string title, int x, int y, int w, int h, bool fullscreen)
 {
@@ -14,6 +16,7 @@ void Engine::init(std::string title, int x, int y, int w, int h, bool fullscreen
   SDL_SetRenderDrawBlendMode(renderer, SDL_BLENDMODE_BLEND);
 
   entityManager = new EntityManager();
+  EntityLoader::load("dat/entitites.json");
 }
 
 void Engine::evHandle()
