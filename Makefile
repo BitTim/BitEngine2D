@@ -4,7 +4,7 @@ PRODUCT := bin/test
 
 CXX := g++
 CXXFLAGS := -c -g
-CXXLIBS := -lSDL2
+CXXLIBS := -lSDL2 -lSDL2_ttf -lSDL2_image
 CXXINCDIRS := -I.
 
 SOURCE := $(shell find . -name *.cc)
