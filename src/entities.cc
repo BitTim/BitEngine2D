@@ -4,8 +4,15 @@
 
 void EntitiyCreator::player()
 {
-  auto& playerEntity(Engine::entityManager->addEntity());
+  Entity& playerEntity(Engine::entityManager->addEntity());
   playerEntity.addComponent<TransformComponent>(10, 10, 2);
+  
+  playerEntity.addGroup(Engine::egPlayer);
 
-  Engine::entities.emplace("player", playerEntity);
+  Engine::entities.push_back(playerEntity);
+}
+
+void EntitiyCreator::tile()
+{
+
 }
