@@ -6,6 +6,7 @@ SDL_Event Engine::event;
 bool Engine::running = true;
 
 EntityManager* Engine::entityManager = nullptr;
+AssetManager* Engine::assets = nullptr;
 std::vector<Entity*> Engine::entities;
 
 void Engine::init(std::string title, int x, int y, int w, int h, bool fullscreen)
@@ -17,6 +18,8 @@ void Engine::init(std::string title, int x, int y, int w, int h, bool fullscreen
   Logger::log("init", "Initialized SDL");
 
   entityManager = new EntityManager();
+  assets = new AssetManager();
+  Logger::log("init", "Created Managers");
 }
 
 void Engine::evHandle()

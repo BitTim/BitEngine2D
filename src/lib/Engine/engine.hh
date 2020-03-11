@@ -5,6 +5,7 @@
 #include <vector>
 
 #include "ecs.hh"
+#include "Managers/assetManager.hh"
 
 class Engine
 {
@@ -14,6 +15,7 @@ public:
   static bool running;
 
   static EntityManager* entityManager;
+  static AssetManager* assets;
   static std::vector<Entity*> entities;
 
   SDL_Window* window;
