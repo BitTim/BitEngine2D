@@ -8,6 +8,9 @@ bool Engine::running = true;
 EntityManager* Engine::entityManager = nullptr;
 AssetManager* Engine::assets = nullptr;
 std::vector<Entity*> Engine::entities;
+std::vector<std::vector<Entity*>> Engine::entityGroups;
+
+SDL_Rect Engine::camera = {0, 0, 640, 480};
 
 void Engine::init(std::string title, int x, int y, int w, int h, bool fullscreen)
 {
@@ -36,7 +39,10 @@ void Engine::update()
 
 void Engine::render()
 {
-  entityManager->draw();
+  for(int i = 0; i < entityGroups.size(); i++)
+  {
+    for(auto& e : entityGroups[i]) e->draw();
+  }
 }
 
 void Engine::terminate()
