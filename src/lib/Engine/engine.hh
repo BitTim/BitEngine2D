@@ -5,6 +5,7 @@
 #include <vector>
 
 #include "ecs.hh"
+#include "constants.hh"
 #include "Managers/assetManager.hh"
 
 class Engine
@@ -17,6 +18,9 @@ public:
   static EntityManager* entityManager;
   static AssetManager* assets;
   static std::vector<Entity*> entities;
+  static std::vector<std::vector<Entity*>> entityGroups;
+
+  static SDL_Rect camera;
 
   SDL_Window* window;
 
@@ -29,10 +33,4 @@ public:
   void terminate();
 
   ~Engine() { }
-
-  enum EntityGroups : std::size_t
-  {
-    egPlayer,
-    egTerrain
-  };
 };
