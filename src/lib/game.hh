@@ -15,4 +15,10 @@ public:
   void terminate();
 
   ~Game() { }
+
+  enum EntityGroupLabels : std::size_t
+  {
+    egPlayer,
+    egTerrain
+  };
 };
