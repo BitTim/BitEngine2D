@@ -3,6 +3,6 @@
 class EntitiyCreator
 {
 public:
-  void player();
-  void tile();
+  static void player();
+  static void tile();
 };
