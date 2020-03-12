@@ -1,13 +1,14 @@
 #include "lib/entities.hh"
 #include "lib/ECS Components/components.hh"
-#include "lib/Engine/engine.hh"
+#include "lib/game.hh"
 
 void EntitiyCreator::player()
 {
   Entity& playerEntity(Engine::entityManager->addEntity());
   playerEntity.addComponent<TransformComponent>(10, 10, 2);
+  playerEntity.addComponent<SpriteComponent>("missing");
   
-  playerEntity.addGroup(Engine::egPlayer);
+  playerEntity.addGroup(Game::egPlayer);
 
   Engine::entities.push_back(&playerEntity);
 }
