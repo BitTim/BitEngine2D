@@ -1,6 +1,7 @@
 #include "lib/game.hh"
 #include "lib/Engine/logger.hh"
 #include "lib/Engine/Managers/textureManager.hh"
+#include "lib/entities.hh"
 
 Engine* Game::engine = nullptr;
 
@@ -11,6 +12,12 @@ void Game::init()
 
   Engine::assets->addTexture("missing", "dat/missing.png");
   Logger::log("init", "Loaded Textures");
+
+  EntitiyCreator::player();
+  Logger::log("init", "Created Entities");
+
+  Engine::entityGroups.push_back(Engine::entityManager->getGroup(egPlayer));
+  Logger::log("init", "Created Entity Groups");
 }
 
 void Game::evHandle()
@@ -27,10 +34,6 @@ void Game::render()
 {
   SDL_SetRenderDrawColor(Engine::renderer, 0x00, 0x00, 0x00, 0xFF);
   SDL_RenderClear(Engine::renderer);
-
-  SDL_Rect src = {0, 0, 32, 32};
-  SDL_Rect dst = {10, 10, 64, 64};
-  TextureManager::draw(Engine::assets->getTexture("missing"), src, dst, SDL_FLIP_NONE);
 
   engine->render();
 
