@@ -7,6 +7,8 @@ void EntitiyCreator::player()
   Entity& playerEntity(Engine::entityManager->addEntity());
   playerEntity.addComponent<TransformComponent>(10, 10, 2);
   playerEntity.addComponent<SpriteComponent>("missing");
+  playerEntity.addComponent<PlatformerPhysicsComponent>();
+  playerEntity.addComponent<PlatformerInputClass>();
   
   playerEntity.addGroup(Game::egPlayer);
 
